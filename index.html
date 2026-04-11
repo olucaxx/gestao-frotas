@@ -93,6 +93,7 @@
         <!-- MOTORISTA -->
         <label>Motorista</label>
         <div class="autocomplete-container">
+          <input id="searchMotoristas" class="search-input" placeholder="Buscar por nome ou CPF" />
           <input id="inputMotorista" placeholder="Buscar motorista..." autocomplete="off" />
           <ul id="motoristaSugestoes" class="sugestoes hidden"></ul>
         </div>
@@ -107,13 +108,14 @@
     <section id="motoristasPage" class="page">
       <h1>Motoristas</h1>
 
+      <input id="searchMotoristasList" class="search-input" placeholder="Buscar por nome ou CPF" />
+
       <button id="addMotoristaBtn" type="button">+ Novo Motorista</button>
 
       <div id="motoristasList" class="page-inner"></div>
 
       <div id="motoristaForm" class="hidden form-panel">
         <h3>Cadastrar Motorista</h3>
-
         <label>Nome</label>
         <input id="inputNomeMotorista" placeholder="Nome" />
 
@@ -144,6 +146,7 @@
 
     <section id="manutencoesPage" class="page">
       <h1>Manutenções</h1>
+      <input id="searchManutencoes" class="search-input" placeholder="Buscar por veículo ou data" />
 
       <button id="addManutencaoBtn" type="button">+ Nova Manutenção</button>
 
@@ -174,6 +177,7 @@
     <!-- ABASTECIMENTOS -->
     <section id="abastecimentosPage" class="page">
       <h1>Abastecimentos</h1>
+      <input id="searchAbastecimentos" class="search-input" placeholder="Buscar por veículo, posto ou data" />
 
       <button id="addAbastecimentoBtn" type="button">+ Novo Abastecimento</button>
 

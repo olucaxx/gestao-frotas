@@ -207,6 +207,13 @@ button:hover {
   margin-bottom: 10px;
   border-radius: 8px;
   border: 1px solid #d1d5db;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
 }
 
 
@@ -317,6 +324,12 @@ body.dark .alerts {
 }
 
 body.dark input {
+  background: #020617;
+  color: white;
+  border: 1px solid #1e293b;
+}
+
+body.dark .search-input {
   background: #020617;
   color: white;
   border: 1px solid #1e293b;
