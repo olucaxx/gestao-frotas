@@ -4,10 +4,28 @@
   padding: 0;
 }
 
+/* ================= VARIÁVEIS ================= */
+:root {
+  --bg-main: #f1f5f9;
+  --bg-card: white;
+  --bg-input: white;
+  --text: #1e293b;
+  --border: #d1d5db;
+}
+
+body.dark {
+  --bg-main: #020617;
+  --bg-card: #0f172a;
+  --bg-input: #020617;
+  --text: #e2e8f0;
+  --border: #1e293b;
+}
+
+/* ================= BASE ================= */
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
+  background: var(--bg-main);
+  color: var(--text);
   transition: all 0.3s ease;
 }
 
@@ -16,6 +34,7 @@ body {
   min-height: 100vh;
 }
 
+/* ================= SIDEBAR ================= */
 .sidebar {
   width: 260px;
   background: linear-gradient(180deg, #0f172a, #1e293b);
@@ -53,10 +72,11 @@ body {
   color: white;
 }
 
+/* ================= CONTENT ================= */
 .content {
   flex: 1;
   padding: 30px;
-  background: #f1f5f9;
+  background: var(--bg-main);
 }
 
 .page {
@@ -73,6 +93,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ================= HEADER ================= */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -86,6 +107,7 @@ body {
   font-size: 14px;
 }
 
+/* ================= CARDS ================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
@@ -94,10 +116,10 @@ body {
 }
 
 .card {
-  background: white;
+  background: var(--bg-card);
   padding: 20px;
   border-radius: 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: all 0.25s ease;
 }
@@ -118,6 +140,7 @@ body {
   font-weight: 600;
 }
 
+/* ================= FORM ================= */
 .page-inner {
   margin-top: 20px;
 }
@@ -125,9 +148,9 @@ body {
 .form-panel {
   margin-top: 25px;
   padding: 20px;
-  background: white;
+  background: var(--bg-card);
   border-radius: 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
@@ -143,7 +166,9 @@ body {
   margin-top: 6px;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  color: var(--text);
   transition: all 0.2s;
 }
 
@@ -153,6 +178,7 @@ body {
   box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
 }
 
+/* ================= BOTÕES ================= */
 button {
   padding: 10px 14px;
   border: none;
@@ -176,7 +202,6 @@ button:hover {
   margin-top: 10px;
 }
 
-
 #saveVeiculo,
 #saveMotorista,
 #saveManutencao,
@@ -193,51 +218,49 @@ button:hover {
   color: white;
 }
 
-
 .form-actions {
   margin-top: 15px;
   display: flex;
   gap: 10px;
 }
 
+/* ================= INPUTS ================= */
 .search-input {
   padding: 12px;
   width: 100%;
   max-width: 320px;
   margin-bottom: 10px;
   border-radius: 8px;
-  border: 1px solid #d1d5db;
-  transition: all 0.2s;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  color: var(--text);
 }
 
 .search-input:focus {
   border-color: #3b82f6;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
 }
 
-
+/* ================= ALERTAS ================= */
 .alerts {
   margin-top: 25px;
-  background: white;
+  background: var(--bg-card);
   padding: 16px;
   border-radius: 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
 }
 
-
+/* ================= AUTOCOMPLETE ================= */
 .autocomplete-container {
   position: relative;
 }
 
 .sugestoes {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   max-height: 150px;
   overflow-y: auto;
-  background: white;
+  background: var(--bg-card);
   position: absolute;
   width: 100%;
   border-radius: 8px;
@@ -250,10 +273,10 @@ button:hover {
 }
 
 .sugestoes li:hover {
-  background: #f1f5f9;
+  background: #1e293b;
 }
 
-
+/* ================= DROPDOWN (CORRIGIDO) ================= */
 .dropdown {
   position: relative;
   width: 100%;
@@ -262,15 +285,11 @@ button:hover {
 
 .dropdown .selected {
   padding: 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: white;
+  background: var(--bg-input);
+  color: var(--text);
   cursor: pointer;
-  transition: all 0.2s;
-}
-
-.dropdown .selected:hover {
-  border-color: #3b82f6;
 }
 
 .dropdown .options {
@@ -278,8 +297,8 @@ button:hover {
   top: 100%;
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #d1d5db;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 8px;
   max-height: 150px;
   overflow-y: auto;
@@ -294,56 +313,18 @@ button:hover {
 .dropdown .options div {
   padding: 10px;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 .dropdown .options div:hover {
-  background: #f1f5f9;
+  background: #1e293b;
 }
 
-
+/* ================= UTIL ================= */
 .hidden {
   display: none;
 }
 
-
-body.dark {
-  background: #020617;
-  color: #e2e8f0;
-}
-
-body.dark .content {
-  background: #020617;
-}
-
-body.dark .card,
-body.dark .form-panel,
-body.dark .alerts {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-}
-
-body.dark input {
-  background: #020617;
-  color: white;
-  border: 1px solid #1e293b;
-}
-
-body.dark .search-input {
-  background: #020617;
-  color: white;
-  border: 1px solid #1e293b;
-}
-
-body.dark .sugestoes {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-}
-
-body.dark .sugestoes li:hover {
-  background: #1e293b;
-}
-
+/* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
@@ -356,10 +337,4 @@ body.dark .sugestoes li:hover {
   .content {
     padding: 20px;
   }
-}
-.options {
-  display: none;
-}
-.options.active {
-  display: block;
 }

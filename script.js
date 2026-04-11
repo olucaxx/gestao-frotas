@@ -171,7 +171,7 @@ function resetVeiculoForm() {
     el.dataset.id = "";
   });
 
-  veiculoForm.classList.add("hidden");
+  document.getElementById("veiculoForm").classList.add("hidden");
 }
 
 async function editVeiculo(id) {
@@ -189,7 +189,7 @@ async function editVeiculo(id) {
   motoristaInput.dataset.id = v.motorista_id || "";
 
   veiculoEditandoId = id;
-  veiculoForm.classList.remove("hidden");
+  document.getElementById("veiculoForm").classList.remove("hidden");
 }
 
 async function deleteVeiculo(id) {
@@ -300,11 +300,11 @@ async function loadManutencoes() {
 
 document.getElementById("addManutencaoBtn").onclick = () => {
   manutencaoEditandoId = null;
-  manutencaoForm.classList.remove("hidden");
+  document.getElementById("manutencaoForm").classList.remove("hidden");
 };
 
 document.getElementById("cancelManutencao").onclick = () => {
-  manutencaoForm.classList.add("hidden");
+  document.getElementById("manutencaoForm").classList.add("hidden");
 };
 
 document.getElementById("saveManutencao").onclick = async () => {
@@ -327,7 +327,7 @@ document.getElementById("saveManutencao").onclick = async () => {
     body: JSON.stringify(data)
   });
 
-  manutencaoForm.classList.add("hidden");
+  document.getElementById("manutencaoForm").classList.add("hidden");
   loadManutencoes();
 };
 
@@ -344,7 +344,7 @@ async function editManutencao(id) {
   inputStatusManut.value = m.status;
 
   manutencaoEditandoId = id;
-  manutencaoForm.classList.remove("hidden");
+  document.getElementById("manutencaoForm").classList.remove("hidden");
 }
 
 async function loadAbastecimentos() {
@@ -379,7 +379,7 @@ async function editAbastecimento(id) {
   inputValor.value = a.valor;
 
   abastecimentoEditandoId = id;
-  abastecimentoForm.classList.remove("hidden");
+  document.getElementById("abastecimentoForm").classList.remove("hidden");
 }
 
 async function deleteAbastecimento(id) {
@@ -390,7 +390,7 @@ async function deleteAbastecimento(id) {
 document.getElementById("addAbastecimentoBtn").onclick = () => {
   abastecimentoEditandoId = null;
   resetAbastecimentoForm();
-  abastecimentoForm.classList.remove("hidden");
+  document.getElementById("abastecimentoForm").classList.remove("hidden");
 };
 
 document.getElementById("cancelAbastecimento").onclick = () => {
@@ -404,7 +404,7 @@ function resetAbastecimentoForm() {
     el.dataset.id = "";
   });
   selectOption("Etanol");
-  abastecimentoForm.classList.add("hidden");
+  document.getElementById("abastecimentoForm").classList.add("hidden");
 }
 
 document.getElementById("saveAbastecimento").onclick = async () => {
