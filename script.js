@@ -388,6 +388,13 @@ async function deleteAbastecimento(id) {
 }
 
 document.getElementById("addAbastecimentoBtn").onclick = () => {
+  document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("addAbastecimentoBtn").onclick = () => {
+    abastecimentoEditandoId = null;
+    resetAbastecimentoForm();
+    document.getElementById("abastecimentoForm").classList.remove("hidden");
+  };
+});
   abastecimentoEditandoId = null;
   resetAbastecimentoForm();
   document.getElementById("abastecimentoForm").classList.remove("hidden");
@@ -403,7 +410,8 @@ function resetAbastecimentoForm() {
     el.value = "";
     el.dataset.id = "";
   });
-  selectOption("Etanol");
+
+  document.getElementById("combustivel").value = "";
   document.getElementById("abastecimentoForm").classList.add("hidden");
 }
 
@@ -412,8 +420,7 @@ document.getElementById("saveAbastecimento").onclick = async () => {
 
   if (!veiculoId) return alert("Selecione um veículo válido");
 
-  const tipoCombustivel = document.querySelector(".selected").textContent.replace(" ▼", "");
-
+  const tipoCombustivel = document.getElementById("combustivel").value;
   const data = {
     veiculo_id: veiculoId,
     data: inputValue("inputDataAbast"),
@@ -463,3 +470,12 @@ function selectOption(valor) {
   document.querySelector(".selected").innerText = valor + " ▼";
   document.getElementById("options").classList.remove("active");
 }
+console.log("Script carregou");
+
+const btn = document.getElementById("addAbastecimentoBtn");
+console.log("Botão:", btn);
+
+btn.onclick = () => {
+  console.log("CLICOU!");
+  document.getElementById("abastecimentoForm").classList.remove("hidden");
+};

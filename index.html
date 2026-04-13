@@ -194,18 +194,14 @@
         <label>Data</label>
         <input id="inputDataAbast" type="date" placeholder="Selecione a data" />
         
-        <label>Tipo de Combustível</label>
-        <div class="dropdown">
-          <div class="selected" onclick="toggleDropdown()">
-             ▼
-          </div>
-          <div class="options" id="options">
-            <div onclick="selectOption('Etanol')">Etanol</div>
-            <div onclick="selectOption('Gasolina')">Gasolina</div>
-            <div onclick="selectOption('Álcool')">Álcool</div>
-            <div onclick="selectOption('Diesel')">Diesel</div>
-          </div>
-        </div>
+        <label for="combustivel">Tipo de Combustível</label>
+        <select id="combustivel" name="combustivel" required>
+          <option value="">Selecione</option>
+          <option value="etanol">Etanol</option>
+          <option value="gasolina">Gasolina</option>
+          <option value="alcool">Álcool</option>
+          <option value="diesel">Diesel</option>
+        </select>
 
         <label>Nome do Posto</label>
         <input id="inputPosto" placeholder="Posto de combustível" />
